@@ -63,10 +63,10 @@ def investment():
     #The following values cannot be stored as strings, as they are needed for 
         #further calculation
         #Float is used for the amount because monetary values can go to 2 decimal places    
-        initial_deposit_amount = user_input_convert_to_float("How much are you depositing initially? £")
+        initial_deposit_amount = user_input_convert_to_float("\n\nHow much are you depositing initially? £")
 
-        interest_rate = user_input_convert_to_int("What is the interest rate(Whole number): ")/100
-        number_years_investing = user_input_convert_to_int("How many years are you investing? ")
+        interest_rate = user_input_convert_to_int("\nWhat is the interest rate(Whole number): ")/100
+        number_years_investing = user_input_convert_to_int("\nHow many years are you investing? ")
 
         #Validating the user input for interest type
         interest_type = user_input_string_validation("\nDo you want to calculate 'simple' or 'compound' interest?: ", "Simple", "Compound")
@@ -86,7 +86,6 @@ def simple_interest(initial_deposit, interest_rt, num_years_investing):
     print(f"\nValue after interest: \t£{value_after_interest}")
 
 
-
 #Function for calculating compound interest
 def compound_interest(initial_deposit, interest_rt, num_years_investing):
     #Calculating the value after compound interest
@@ -97,9 +96,9 @@ def compound_interest(initial_deposit, interest_rt, num_years_investing):
 
 #Function for when the user selects the bond calculator
 def bond():
-    present_house_value = user_input_convert_to_float("Please input the present value of your house: £")
-    annual_interest_rate = (user_input_convert_to_int("What is the yearly interest rate: "))/100
-    number_months_for_repayment = user_input_convert_to_int("Over how many months do you plan to repay the bond? ")
+    present_house_value = user_input_convert_to_float("\n\nPlease input the present value of your house: £")
+    annual_interest_rate = (user_input_convert_to_int("\nWhat is the yearly interest rate: "))/100
+    number_months_for_repayment = user_input_convert_to_int("\nOver how many months do you plan to repay the bond? ")
 
     #Calculating the monthly interest rate requires dividing by 12
     monthly_interest_rate = annual_interest_rate / 12
