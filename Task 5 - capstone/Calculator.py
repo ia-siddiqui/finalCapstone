@@ -64,7 +64,7 @@ if (selection == "Investment"): #Condition 1: Investment calculator has been cho
     number_years_investing = user_input_int_validation("How many years are you investing? ")
 
     #Validating the user input for interest type
-    interest_type = user_input_string_validation("Do you want to calculate 'simple' or 'compound' interest?: ", "Simple", "Compound")
+    interest_type = user_input_string_validation("\nDo you want to calculate 'simple' or 'compound' interest?: ", "Simple", "Compound")
 
     if (interest_type == "Simple"): #Condition 1: Calculating value with simple interest
 
