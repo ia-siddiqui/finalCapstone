@@ -7,13 +7,15 @@ import math
 print("\nInvestment - to calculate the amount of interest you'll earn on your investment")
 print("Bond - to calculate the amount you'll have to pay on a home loan \n")
 
-#The user must choose which calculator they want to use
-
-selection = input("Enter either 'Investment' or 'Bond' from the menu above to proceed: ")
-#To ensure variable selection is homogenous, so capitals don't affect it, we use .title
-selection = selection.title()
-
-# As a test, we can use print(selection) to check the .title is working correctly
+#Getting the user option selection, validating the input
+while True:
+    selection = input("Enter either 'Investment' or 'Bond' from the menu above to proceed: ").title()
+    print()
+    #To ensure variable selection is homogenous, so capitals don't affect it, we use .title
+    if (selection == "Investment") or (selection == "Bond"):
+        break
+    else:
+        print("Invalid input. Please try again\n")
 
 #Here, we use if, elif and else to enact the calculator based on their choice
 if (selection == "Investment"): #Condition 1: Investment calculator has been chosen
