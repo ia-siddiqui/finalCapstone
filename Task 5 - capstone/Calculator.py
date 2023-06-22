@@ -33,6 +33,7 @@ def user_input_int_validation(input_request):
     while not int_validated:
         try:
             user_num_input = int(input(input_request))
+            int_validated = True
         except ValueError as error1:
             print(error1)
             print("Invalid input. Please try again\n")
