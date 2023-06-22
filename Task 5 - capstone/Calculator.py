@@ -16,7 +16,6 @@ while True:
     else:
         print("Invalid input. Please try again\n")
 
-#Here, we use if, elif and else to enact the calculator based on their choice
 if (selection == "Investment"): #Condition 1: Investment calculator has been chosen
 
     #The following values cannot be stored as strings, as they are needed for 
@@ -47,7 +46,7 @@ if (selection == "Investment"): #Condition 1: Investment calculator has been cho
         value_after_interest = round(value_after_interest, 2)
         print(f"\nValue after interest: \t£{value_after_interest}")
         
-    elif(interest_type == "Compound"): #Condition 2: Calculating value with compound interest
+    else: #Condition 2: Calculating value with compound interest
         
         #Calculating the value after compound interest
         value_after_interest = initial_deposit_amount * math.pow((1 + interest_rate), number_years_investing)
