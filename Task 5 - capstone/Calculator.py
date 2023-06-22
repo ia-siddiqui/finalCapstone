@@ -56,55 +56,57 @@ def user_input_convert_to_float(input_request):
             print("Invalid input. Please try again\n")
 
     return user_float_input
+  
 
+#Create the main function
+def main():
+    #Introducing the options to the user
+    print("\nInvestment - to calculate the amount of interest you'll earn on your investment")
+    print("Bond - to calculate the amount you'll have to pay on a home loan \n")
 
-#========================================================Program Start========================================================
+    selection = user_input_string_validation("Enter either 'Investment' or 'Bond' from the menu above to proceed: ", "Investment" , "Bond")
 
-#Introducing the options to the user
-print("\nInvestment - to calculate the amount of interest you'll earn on your investment")
-print("Bond - to calculate the amount you'll have to pay on a home loan \n")
+    if (selection == "Investment"): #Condition 1: Investment calculator has been chosen
 
-selection = user_input_string_validation("Enter either 'Investment' or 'Bond' from the menu above to proceed: ", "Investment" , "Bond")
+        #The following values cannot be stored as strings, as they are needed for 
+        #further calculation
+        #Float is used for the amount because monetary values can go to 2 decimal places    
+        initial_deposit_amount = user_input_convert_to_float("How much are you depositing initially? £")
 
-if (selection == "Investment"): #Condition 1: Investment calculator has been chosen
+        interest_rate = user_input_convert_to_int("What is the interest rate(Whole number): ")/100
+        number_years_investing = user_input_convert_to_int("How many years are you investing? ")
 
-    #The following values cannot be stored as strings, as they are needed for 
-    #further calculation
-    #Float is used for the amount because monetary values can go to 2 decimal places    
-    initial_deposit_amount = user_input_convert_to_float("How much are you depositing initially? £")
+        #Validating the user input for interest type
+        interest_type = user_input_string_validation("\nDo you want to calculate 'simple' or 'compound' interest?: ", "Simple", "Compound")
 
-    interest_rate = user_input_convert_to_int("What is the interest rate(Whole number): ")/100
-    number_years_investing = user_input_convert_to_int("How many years are you investing? ")
+        if (interest_type == "Simple"): #Condition 1: Calculating value with simple interest
 
-    #Validating the user input for interest type
-    interest_type = user_input_string_validation("\nDo you want to calculate 'simple' or 'compound' interest?: ", "Simple", "Compound")
-
-    if (interest_type == "Simple"): #Condition 1: Calculating value with simple interest
-
-        value_after_interest = initial_deposit_amount *(1 + (interest_rate * number_years_investing))
-        #Rounding the value to 2 decimal points:https://www.geeksforgeeks.org/how-to-round-numbers-in-python/
-        value_after_interest = round(value_after_interest, 2)
-        print(f"\nValue after interest: \t£{value_after_interest}")
+            value_after_interest = initial_deposit_amount *(1 + (interest_rate * number_years_investing))
+            #Rounding the value to 2 decimal points:https://www.geeksforgeeks.org/how-to-round-numbers-in-python/
+            value_after_interest = round(value_after_interest, 2)
+            print(f"\nValue after interest: \t£{value_after_interest}")
+            
+        else: #Condition 2: Calculating value with compound interest
+            
+            #Calculating the value after compound interest
+            value_after_interest = initial_deposit_amount * math.pow((1 + interest_rate), number_years_investing)
+            value_after_interest = round(value_after_interest, 2)
+            print(f"\nValue after interest: \t£{value_after_interest}")
         
-    else: #Condition 2: Calculating value with compound interest
+    else: #Condition 2: Bond calculator has been chosen
         
-        #Calculating the value after compound interest
-        value_after_interest = initial_deposit_amount * math.pow((1 + interest_rate), number_years_investing)
-        value_after_interest = round(value_after_interest, 2)
-        print(f"\nValue after interest: \t£{value_after_interest}")
-    
-else: #Condition 2: Bond calculator has been chosen
-    
-    present_house_value = user_input_convert_to_float("Please input the present value of your house: £")
-    annual_interest_rate = (user_input_convert_to_int("What is the yearly interest rate: "))/100
-    number_months_for_repayment = user_input_convert_to_int("Over how many months do you plan to repay the bond? ")
+        present_house_value = user_input_convert_to_float("Please input the present value of your house: £")
+        annual_interest_rate = (user_input_convert_to_int("What is the yearly interest rate: "))/100
+        number_months_for_repayment = user_input_convert_to_int("Over how many months do you plan to repay the bond? ")
 
-    #Calculating the monthly interest rate requires dividing by 12
-    monthly_interest_rate = annual_interest_rate / 12
+        #Calculating the monthly interest rate requires dividing by 12
+        monthly_interest_rate = annual_interest_rate / 12
 
-    # Calculate monthly repayments
-    monthly_repayment_value = (monthly_interest_rate * present_house_value)/(1- (1 + monthly_interest_rate)**(-number_months_for_repayment))
-    monthly_repayment_value = round(monthly_repayment_value, 2)
-    print(f"\nMonthly repayment value: \t£{monthly_repayment_value}")
-    
+        # Calculate monthly repayments
+        monthly_repayment_value = (monthly_interest_rate * present_house_value)/(1- (1 + monthly_interest_rate)**(-number_months_for_repayment))
+        monthly_repayment_value = round(monthly_repayment_value, 2)
+        print(f"\nMonthly repayment value: \t£{monthly_repayment_value}")
 
+
+#========================================================Program Start========================================================  
+main()
