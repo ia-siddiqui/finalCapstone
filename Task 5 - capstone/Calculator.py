@@ -107,6 +107,10 @@ else: #Condition 2: Bond calculator has been chosen
     test_result = (annual_interest_rate + number_months_for_repayment + monthly_interest_rate)
     print(f"\nTest result = {test_result}")
 
+    #As all the values except number_months_for_repayment involve further calculation, we use this to test if present_house_value is the issue
+    #A simple addition should involve no other errors (such as DivisionbyZero etc.), so is the best test
+    present_house_value_hypothesis_test = (present_house_value + number_months_for_repayment)
+
     #Calculate monthly repayments
     # monthly_repayment_value = (monthly_interest_rate * present_house_value)/(1- (1 + monthly_interest_rate)**(-number_months_for_repayment))
     # monthly_repayment_value = round(monthly_repayment_value, 2)
