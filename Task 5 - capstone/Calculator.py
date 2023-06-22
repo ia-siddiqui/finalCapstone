@@ -90,7 +90,7 @@ else: #Condition 2: Bond calculator has been chosen
             print(error2)
             print("Invalid input. Please try again\n")
 
-    annual_interest_rate = user_input_int_validation("What is the yearly interest rate: ")/100
+    annual_interest_rate = (user_input_int_validation("What is the yearly interest rate: "))/100
     number_months_for_repayment = user_input_int_validation("Over how many months do you plan to repay the bond? ")
 
     #Calculating the monthly interest rate requires dividing by 12
