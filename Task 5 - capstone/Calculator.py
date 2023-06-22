@@ -25,7 +25,7 @@ def user_input_string_validation(input_request, option_1, option_2):
 
 
 #Function to validate the user input for an integer
-def user_input_int_validation(input_request):
+def user_input_convert_to_int(input_request):
     #Create a boolean to break the loop after validation
     int_validated = False
 
@@ -41,6 +41,25 @@ def user_input_int_validation(input_request):
     return user_num_input 
 
 
+#Function to validate the user input for a float 
+def user_input_convert_to_float(input_request):
+    #Create a boolean to break the loop after validation
+    float_validated = False
+
+    #Create the loop to validate the input
+    while not float_validated:
+        try:
+            user_float_input = float(input(input_request))
+            float_validated = True
+        except ValueError as error1:
+            print(error1)
+            print("Invalid input. Please try again\n")
+
+    return user_float_input
+
+
+#========================================================Program Start========================================================
+
 #Introducing the options to the user
 print("\nInvestment - to calculate the amount of interest you'll earn on your investment")
 print("Bond - to calculate the amount you'll have to pay on a home loan \n")
@@ -51,17 +70,11 @@ if (selection == "Investment"): #Condition 1: Investment calculator has been cho
 
     #The following values cannot be stored as strings, as they are needed for 
     #further calculation
-    #Float is used for the amount because monetary values can go to 2 decimal places
-    while True:
-        try:
-            initial_deposit_amount = float(input("How much are you depositing initially? £"))
-            break
-        except ValueError as error1:
-            print(error1)
-            print("Invalid input. Please try again\n")
+    #Float is used for the amount because monetary values can go to 2 decimal places    
+    initial_deposit_amount = user_input_convert_to_float("How much are you depositing initially? £")
 
-    interest_rate = user_input_int_validation("What is the interest rate(Whole number): ")/100
-    number_years_investing = user_input_int_validation("How many years are you investing? ")
+    interest_rate = user_input_convert_to_int("What is the interest rate(Whole number): ")/100
+    number_years_investing = user_input_convert_to_int("How many years are you investing? ")
 
     #Validating the user input for interest type
     interest_type = user_input_string_validation("\nDo you want to calculate 'simple' or 'compound' interest?: ", "Simple", "Compound")
@@ -82,16 +95,9 @@ if (selection == "Investment"): #Condition 1: Investment calculator has been cho
     
 else: #Condition 2: Bond calculator has been chosen
     
-    while True:
-        try:
-            present_house_value = float(input("Please input the present value of your house: £"))
-            break
-        except ValueError as error2:
-            print(error2)
-            print("Invalid input. Please try again\n")
-
-    annual_interest_rate = (user_input_int_validation("What is the yearly interest rate: "))/100
-    number_months_for_repayment = user_input_int_validation("Over how many months do you plan to repay the bond? ")
+    present_house_value = user_input_convert_to_float("Please input the present value of your house: £")
+    annual_interest_rate = (user_input_convert_to_int("What is the yearly interest rate: "))/100
+    number_months_for_repayment = user_input_convert_to_int("Over how many months do you plan to repay the bond? ")
 
     #Calculating the monthly interest rate requires dividing by 12
     monthly_interest_rate = annual_interest_rate / 12
