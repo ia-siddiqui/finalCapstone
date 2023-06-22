@@ -4,9 +4,9 @@
 import math
 
 
-#Function to validate the user input
+#Function to validate the user input for a string
 def user_input_string_validation(input_request, option_1, option_2):
-    #Create a boolean to break the loop
+    #Create a boolean to break the loop after validation
     string_validated = False
     #Create a list with the two options, to validate the user input against
     string_options = [option_1, option_2]
@@ -14,12 +14,30 @@ def user_input_string_validation(input_request, option_1, option_2):
     #Create the loop to validate the input
     while not string_validated:
         #Add .title() to ensure variable selection is homogenous
-        user_input = input(input_request).title()
+        user_string_input = input(input_request).title()
 
-        if user_input in string_options:
+        if user_string_input in string_options:
             string_validated = True
         else:
-            print("\nYou've entered an invalid option, please try again\n")
+            print("You've entered an invalid option, please try again\n")
+
+    return user_string_input
+
+
+#Function to validate the user input for an integer
+def user_input_int_validation(input_request):
+    #Create a boolean to break the loop after validation
+    int_validated = False
+
+    #Create the loop to validate the input
+    while not int_validated:
+        try:
+            user_num_input = int(input(input_request))
+        except ValueError as error1:
+            print(error1)
+            print("Invalid input. Please try again\n")
+
+    return user_num_input 
 
 
 #Introducing the options to the user
@@ -27,7 +45,6 @@ print("\nInvestment - to calculate the amount of interest you'll earn on your in
 print("Bond - to calculate the amount you'll have to pay on a home loan \n")
 
 selection = user_input_string_validation("Enter either 'Investment' or 'Bond' from the menu above to proceed: ", "Investment" , "Bond")
-    #To ensure variable selection is homogenous, so capitals don't affect it, we use .title
 
 if (selection == "Investment"): #Condition 1: Investment calculator has been chosen
 
