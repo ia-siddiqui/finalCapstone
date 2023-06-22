@@ -35,54 +35,31 @@ if (selection == "Investment"): #Condition 1: Investment calculator has been cho
             print("Invalid input. Please try again\n")
 
     if (interest_type == "Simple"): #Condition 1: Calculating value with simple interest
-        
+
         value_after_interest = initial_deposit_amount *(1 + (interest_rate * number_years_investing))
-
-        #Rounding the value to 2 decimal points as we are dealing with currency, which is 2dp
-        #Got this from https://www.geeksforgeeks.org/how-to-round-numbers-in-python/
+        #Rounding the value to 2 decimal points:https://www.geeksforgeeks.org/how-to-round-numbers-in-python/
         value_after_interest = round(value_after_interest, 2)
-
         print(f"\nValue after interest: \t£{value_after_interest}")
         
     elif(interest_type == "Compound"): #Condition 2: Calculating value with compound interest
         
         #Calculating the value after compound interest
         value_after_interest = initial_deposit_amount * math.pow((1 + interest_rate), number_years_investing)
-
-        #Rounding the value to 2 decimal points as we are dealing with currency, which is 2dp
-        #Got this from https://www.geeksforgeeks.org/how-to-round-numbers-in-python/
         value_after_interest = round(value_after_interest, 2)
-
         print(f"\nValue after interest: \t£{value_after_interest}")
-
-    elif (len(interest_type) == 0):  #Condition 3: User has not entered anything
-        
-        print("You have not entered anything")
-
-    else: #User has entered an invalid input
-        
-        print("Invalid input")
     
 else: #Condition 2: Bond calculator has been chosen
     
-    #The following values cannot be stored as strings, as they are needed for 
-    #further calculation
     #Float and round are used for the value because monetary values can go to 2 decimal places
     present_house_value = round(float(input("Please input the present value of your house: £")), 2)
-
     annual_interest_rate = (int(input("What is the yearly interest rate: ")))/100
     #Calculating the monthly interest rate requires dividing by 12
     monthly_interest_rate = annual_interest_rate / 12
-
     number_months_for_repayment = int(input("Over how many months do you plan to repay the bond? "))
 
     #Calculate monthly repayments
     monthly_repayment_value = (monthly_interest_rate * present_house_value)/(1- (1 + monthly_interest_rate)**(-number_months_for_repayment))
-    
-    #Rounding the value to 2 decimal points as we are dealing with currency, which is 2dp
-    #Got this from https://www.geeksforgeeks.org/how-to-round-numbers-in-python/
     monthly_repayment_value = round(monthly_repayment_value, 2)
-
     print(f"\nMonthly repayment value: \t£{monthly_repayment_value}")
     
 
