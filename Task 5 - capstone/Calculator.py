@@ -26,10 +26,13 @@ if (selection == "Investment"): #Condition 1: Investment calculator has been cho
     interest_rate = (int(input("What is the interest rate(Whole number): ")))/100
     number_years_investing = int(input("How many years are you investing? "))
 
-    #Now you want to ask whether they want to calculate simple or compound interest
-    interest_type = input("Do you want to calculate 'simple' or 'compound' interest? ")
-    #To ensure variable interest_type is homogenous, so capitals don't affect it, we use .title
-    interest_type = interest_type.title()
+    #Validating the user input for interest type
+    while True:
+        interest_type = input("Do you want to calculate 'simple' or 'compound' interest?: ").title()
+        if (interest_type == "Simple") or (interest_type == "Compound"):
+            break
+        else:
+            print("Invalid input. Please try again\n")
 
     if (interest_type == "Simple"): #Condition 1: Calculating value with simple interest
         
