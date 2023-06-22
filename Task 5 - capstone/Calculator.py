@@ -3,18 +3,31 @@
 
 import math
 
+
+#Function to validate the user input
+def user_input_string_validation(input_request, option_1, option_2):
+    #Create a boolean to break the loop
+    string_validated = False
+    #Create a list with the two options, to validate the user input against
+    string_options = [option_1, option_2]
+
+    #Create the loop to validate the input
+    while not string_validated:
+        #Add .title() to ensure variable selection is homogenous
+        user_input = input(input_request).title()
+
+        if user_input in string_options:
+            string_validated = True
+        else:
+            print("\nYou've entered an invalid option, please try again\n")
+
+
 #Introducing the options to the user
 print("\nInvestment - to calculate the amount of interest you'll earn on your investment")
 print("Bond - to calculate the amount you'll have to pay on a home loan \n")
 
-#Getting the user option selection, validating the input
-while True:
-    selection = input("Enter either 'Investment' or 'Bond' from the menu above to proceed: ").title()
+selection = user_input_string_validation("Enter either 'Investment' or 'Bond' from the menu above to proceed: ", "Investment" , "Bond")
     #To ensure variable selection is homogenous, so capitals don't affect it, we use .title
-    if (selection == "Investment") or (selection == "Bond"):
-        break
-    else:
-        print("Invalid input. Please try again\n")
 
 if (selection == "Investment"): #Condition 1: Investment calculator has been chosen
 
@@ -32,12 +45,7 @@ if (selection == "Investment"): #Condition 1: Investment calculator has been cho
             print("Invalid input. Please try again\n")
 
     #Validating the user input for interest type
-    while True:
-        interest_type = input("Do you want to calculate 'simple' or 'compound' interest?: ").title()
-        if (interest_type == "Simple") or (interest_type == "Compound"):
-            break
-        else:
-            print("Invalid input. Please try again\n")
+    interest_type = user_input_string_validation("Do you want to calculate 'simple' or 'compound' interest?: ", "Simple", "Compound")
 
     if (interest_type == "Simple"): #Condition 1: Calculating value with simple interest
 
