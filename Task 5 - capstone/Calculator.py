@@ -22,9 +22,15 @@ if (selection == "Investment"): #Condition 1: Investment calculator has been cho
     #The following values cannot be stored as strings, as they are needed for 
     #further calculation
     #Float is used for the amount because monetary values can go to 2 decimal places
-    initial_deposit_amount = float(input("How much are you depositing initially? £"))
-    interest_rate = (int(input("What is the interest rate(Whole number): ")))/100
-    number_years_investing = int(input("How many years are you investing? "))
+    while True:
+        try:
+            initial_deposit_amount = float(input("How much are you depositing initially? £"))
+            interest_rate = (int(input("What is the interest rate(Whole number): ")))/100
+            number_years_investing = int(input("How many years are you investing? "))
+            break
+        except ValueError as error1:
+            print(error1)
+            print("Invalid input. Please try again\n")
 
     #Validating the user input for interest type
     while True:
@@ -50,13 +56,18 @@ if (selection == "Investment"): #Condition 1: Investment calculator has been cho
     
 else: #Condition 2: Bond calculator has been chosen
     
-    #Float and round are used for the value because monetary values can go to 2 decimal places
-    present_house_value = round(float(input("Please input the present value of your house: £")), 2)
-    annual_interest_rate = (int(input("What is the yearly interest rate: ")))/100
+    while True:
+        try:
+            present_house_value = round(float(input("Please input the present value of your house: £")), 2)
+            annual_interest_rate = (int(input("What is the yearly interest rate: ")))/100
+            number_months_for_repayment = int(input("Over how many months do you plan to repay the bond? "))
+            break
+        except ValueError as error2:
+            print(error2)
+            print("Invalid input. Please try again\n")
+
     #Calculating the monthly interest rate requires dividing by 12
     monthly_interest_rate = annual_interest_rate / 12
-    number_months_for_repayment = int(input("Over how many months do you plan to repay the bond? "))
-
     #Calculate monthly repayments
     monthly_repayment_value = (monthly_interest_rate * present_house_value)/(1- (1 + monthly_interest_rate)**(-number_months_for_repayment))
     monthly_repayment_value = round(monthly_repayment_value, 2)
