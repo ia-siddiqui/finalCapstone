@@ -85,6 +85,9 @@ else: #Condition 2: Bond calculator has been chosen
     while True:
         try:
             present_house_value = (float(input("Please input the present value of your house: £")), 2)
+            #This print returns (num, 2), the ',2' has been left over by accident when rounding
+            #This shoul be causing the problem
+            print(f"\npresent_house_value = {present_house_value}")
             break
         except ValueError as error2:
             print(error2)
@@ -93,11 +96,20 @@ else: #Condition 2: Bond calculator has been chosen
     annual_interest_rate = (user_input_int_validation("What is the yearly interest rate: "))/100
     number_months_for_repayment = user_input_int_validation("Over how many months do you plan to repay the bond? ")
 
+    print(f"\nannual_interest_rate = {annual_interest_rate}")
+    print(f"\nnumber_months_for_repayment = {number_months_for_repayment}")
+
     #Calculating the monthly interest rate requires dividing by 12
     monthly_interest_rate = annual_interest_rate / 12
+    print(f"\nmonthly_interest_rate = {monthly_interest_rate}")
+
+    #To test present_house_value is the problem, we check if all the other variables can be involved in a calculation without any errors
+    test_result = (annual_interest_rate + number_months_for_repayment + monthly_interest_rate)
+    print(f"\nTest result = {test_result}")
+
     #Calculate monthly repayments
-    monthly_repayment_value = (monthly_interest_rate * present_house_value)/(1- (1 + monthly_interest_rate)**(-number_months_for_repayment))
-    monthly_repayment_value = round(monthly_repayment_value, 2)
-    print(f"\nMonthly repayment value: \t£{monthly_repayment_value}")
+    # monthly_repayment_value = (monthly_interest_rate * present_house_value)/(1- (1 + monthly_interest_rate)**(-number_months_for_repayment))
+    # monthly_repayment_value = round(monthly_repayment_value, 2)
+    # print(f"\nMonthly repayment value: \t£{monthly_repayment_value}")
     
 
