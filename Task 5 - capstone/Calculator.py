@@ -58,17 +58,9 @@ def user_input_convert_to_float(input_request):
     return user_float_input
   
 
-#Create the main function
-def main():
-    #Introducing the options to the user
-    print("\nInvestment - to calculate the amount of interest you'll earn on your investment")
-    print("Bond - to calculate the amount you'll have to pay on a home loan \n")
-
-    selection = user_input_string_validation("Enter either 'Investment' or 'Bond' from the menu above to proceed: ", "Investment" , "Bond")
-
-    if (selection == "Investment"): #Condition 1: Investment calculator has been chosen
-
-        #The following values cannot be stored as strings, as they are needed for 
+#Function for when the user selects the investment calculator
+def investment():
+    #The following values cannot be stored as strings, as they are needed for 
         #further calculation
         #Float is used for the amount because monetary values can go to 2 decimal places    
         initial_deposit_amount = user_input_convert_to_float("How much are you depositing initially? £")
@@ -92,20 +84,36 @@ def main():
             value_after_interest = initial_deposit_amount * math.pow((1 + interest_rate), number_years_investing)
             value_after_interest = round(value_after_interest, 2)
             print(f"\nValue after interest: \t£{value_after_interest}")
+
+
+#Function for when the user selects the bond calculator
+def bond():
+    present_house_value = user_input_convert_to_float("Please input the present value of your house: £")
+    annual_interest_rate = (user_input_convert_to_int("What is the yearly interest rate: "))/100
+    number_months_for_repayment = user_input_convert_to_int("Over how many months do you plan to repay the bond? ")
+
+    #Calculating the monthly interest rate requires dividing by 12
+    monthly_interest_rate = annual_interest_rate / 12
+
+    # Calculate monthly repayments
+    monthly_repayment_value = (monthly_interest_rate * present_house_value)/(1- (1 + monthly_interest_rate)**(-number_months_for_repayment))
+    monthly_repayment_value = round(monthly_repayment_value, 2)
+    print(f"\nMonthly repayment value: \t£{monthly_repayment_value}")
+
+
+#Create the main function
+def main():
+    #Introducing the options to the user
+    print("\nInvestment - to calculate the amount of interest you'll earn on your investment")
+    print("Bond - to calculate the amount you'll have to pay on a home loan \n")
+
+    selection = user_input_string_validation("Enter either 'Investment' or 'Bond' from the menu above to proceed: ", "Investment" , "Bond")
+
+    if (selection == "Investment"): #Condition 1: Investment calculator has been chosen
+        investment()
         
     else: #Condition 2: Bond calculator has been chosen
-        
-        present_house_value = user_input_convert_to_float("Please input the present value of your house: £")
-        annual_interest_rate = (user_input_convert_to_int("What is the yearly interest rate: "))/100
-        number_months_for_repayment = user_input_convert_to_int("Over how many months do you plan to repay the bond? ")
-
-        #Calculating the monthly interest rate requires dividing by 12
-        monthly_interest_rate = annual_interest_rate / 12
-
-        # Calculate monthly repayments
-        monthly_repayment_value = (monthly_interest_rate * present_house_value)/(1- (1 + monthly_interest_rate)**(-number_months_for_repayment))
-        monthly_repayment_value = round(monthly_repayment_value, 2)
-        print(f"\nMonthly repayment value: \t£{monthly_repayment_value}")
+        bond()
 
 
 #========================================================Program Start========================================================  
