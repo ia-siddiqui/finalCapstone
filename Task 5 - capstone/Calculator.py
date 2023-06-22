@@ -58,7 +58,7 @@ else: #Condition 2: Bond calculator has been chosen
     
     while True:
         try:
-            present_house_value = round(float(input("Please input the present value of your house: £")), 2)
+            present_house_value = (float(input("Please input the present value of your house: £")), 2)
             annual_interest_rate = (int(input("What is the yearly interest rate: ")))/100
             number_months_for_repayment = int(input("Over how many months do you plan to repay the bond? "))
             break
