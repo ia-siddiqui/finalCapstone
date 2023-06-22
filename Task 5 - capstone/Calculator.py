@@ -54,12 +54,13 @@ if (selection == "Investment"): #Condition 1: Investment calculator has been cho
     while True:
         try:
             initial_deposit_amount = float(input("How much are you depositing initially? £"))
-            interest_rate = (int(input("What is the interest rate(Whole number): ")))/100
-            number_years_investing = int(input("How many years are you investing? "))
             break
         except ValueError as error1:
             print(error1)
             print("Invalid input. Please try again\n")
+
+    interest_rate = user_input_int_validation("What is the interest rate(Whole number): ")/100
+    number_years_investing = user_input_int_validation("How many years are you investing? ")
 
     #Validating the user input for interest type
     interest_type = user_input_string_validation("Do you want to calculate 'simple' or 'compound' interest?: ", "Simple", "Compound")
@@ -83,12 +84,13 @@ else: #Condition 2: Bond calculator has been chosen
     while True:
         try:
             present_house_value = (float(input("Please input the present value of your house: £")), 2)
-            annual_interest_rate = (int(input("What is the yearly interest rate: ")))/100
-            number_months_for_repayment = int(input("Over how many months do you plan to repay the bond? "))
             break
         except ValueError as error2:
             print(error2)
             print("Invalid input. Please try again\n")
+
+    annual_interest_rate = user_input_int_validation("What is the yearly interest rate: ")/100
+    number_months_for_repayment = user_input_int_validation("Over how many months do you plan to repay the bond? ")
 
     #Calculating the monthly interest rate requires dividing by 12
     monthly_interest_rate = annual_interest_rate / 12
