@@ -72,18 +72,27 @@ def investment():
         interest_type = user_input_string_validation("\nDo you want to calculate 'simple' or 'compound' interest?: ", "Simple", "Compound")
 
         if (interest_type == "Simple"): #Condition 1: Calculating value with simple interest
-
-            value_after_interest = initial_deposit_amount *(1 + (interest_rate * number_years_investing))
-            #Rounding the value to 2 decimal points:https://www.geeksforgeeks.org/how-to-round-numbers-in-python/
-            value_after_interest = round(value_after_interest, 2)
-            print(f"\nValue after interest: \t£{value_after_interest}")
+            simple_interest(initial_deposit_amount, interest_rate, number_years_investing)
             
         else: #Condition 2: Calculating value with compound interest
-            
-            #Calculating the value after compound interest
-            value_after_interest = initial_deposit_amount * math.pow((1 + interest_rate), number_years_investing)
-            value_after_interest = round(value_after_interest, 2)
-            print(f"\nValue after interest: \t£{value_after_interest}")
+            compound_interest(initial_deposit_amount, interest_rate, number_years_investing)
+
+
+#Function for calculating simple interest
+def simple_interest(initial_deposit, interest_rt, num_years_investing):
+    value_after_interest = initial_deposit *(1 + (interest_rt * num_years_investing))
+    #Rounding the value to 2 decimal points:https://www.geeksforgeeks.org/how-to-round-numbers-in-python/
+    value_after_interest = round(value_after_interest, 2)
+    print(f"\nValue after interest: \t£{value_after_interest}")
+
+
+
+#Function for calculating compound interest
+def compound_interest(initial_deposit, interest_rt, num_years_investing):
+    #Calculating the value after compound interest
+    value_after_interest = initial_deposit * math.pow((1 + interest_rt), num_years_investing)
+    value_after_interest = round(value_after_interest, 2)
+    print(f"\nValue after interest: \t£{value_after_interest}")
 
 
 #Function for when the user selects the bond calculator
@@ -106,12 +115,10 @@ def main():
     #Introducing the options to the user
     print("\nInvestment - to calculate the amount of interest you'll earn on your investment")
     print("Bond - to calculate the amount you'll have to pay on a home loan \n")
-
     selection = user_input_string_validation("Enter either 'Investment' or 'Bond' from the menu above to proceed: ", "Investment" , "Bond")
 
     if (selection == "Investment"): #Condition 1: Investment calculator has been chosen
-        investment()
-        
+        investment()    
     else: #Condition 2: Bond calculator has been chosen
         bond()
 
