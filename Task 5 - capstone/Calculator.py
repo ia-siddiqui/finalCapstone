@@ -10,7 +10,6 @@ print("Bond - to calculate the amount you'll have to pay on a home loan \n")
 #Getting the user option selection, validating the input
 while True:
     selection = input("Enter either 'Investment' or 'Bond' from the menu above to proceed: ").title()
-    print()
     #To ensure variable selection is homogenous, so capitals don't affect it, we use .title
     if (selection == "Investment") or (selection == "Bond"):
         break
@@ -61,7 +60,7 @@ if (selection == "Investment"): #Condition 1: Investment calculator has been cho
         
         print("Invalid input")
     
-elif (selection == "Bond"): #Condition 2: Bond calculator has been chosen
+else: #Condition 2: Bond calculator has been chosen
     
     #The following values cannot be stored as strings, as they are needed for 
     #further calculation
@@ -84,8 +83,3 @@ elif (selection == "Bond"): #Condition 2: Bond calculator has been chosen
     print(f"\nMonthly repayment value: \t£{monthly_repayment_value}")
     
 
-elif (len(selection) == 0):  #Condition 3: User has not entered anything
-    print("You have not entered anything")
-
-else: #User has entered an invalid input
-    print("Invalid input")
