@@ -42,7 +42,7 @@ For both the string user input and numerical user inputs are validated:
 
 
 ## Credits
-Author(s): https://github.com/ia-siddiqui
+Author(s): [Ibraheem Siddiqui](https://github.com/ia-siddiqui)
 
 Client: HyperionDev DfE Software Engineering (Fundamentals) Bootcamp
 
