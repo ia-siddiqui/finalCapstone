@@ -374,7 +374,7 @@ def user_task_selection(u_spec_task_list):
     while not edit_number_validation:
     #Ensuring an incorrect data type is not entered
         try:    
-            u_t_edit_index = int(input("Enter the number of the task you wish to edit (If you don't wish to edit the task, enter -1): "))
+            u_t_edit_index = int(input(f"Enter the number of the task you wish to edit (range: 1 - {len(u_spec_task_list)}) (If you don't wish to edit the task, enter -1): "))
 
         except ValueError as error:
             print(error)
