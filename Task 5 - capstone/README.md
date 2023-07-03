@@ -25,20 +25,20 @@ This program requires no additional packages to be installed
 
 ## Usage
 When the program start, the user is presented with two options:
-![Initial user choice](https://github.com/ia-siddiqui/finalCapstone/blob/main/Task%205%20-%20capstone/Finance%20calculator%20program%20start.png)
+![Initial user choice](https://github.com/ia-siddiqui/finalCapstone/blob/main/Task%205%20-%20capstone/Usage%20photos/Finance%20calculator%20program%20start.png)
 
 If 'Investment' is selected, the user inputs the three numerical values, then needs to select if they want to calculate simple or compound interest. After the user enters their choice, the final value after interest is printed
-![Investment selected](https://github.com/ia-siddiqui/finalCapstone/blob/main/Task%205%20-%20capstone/Finance%20calculator%20investment%20selection.png)
+![Investment selected](https://github.com/ia-siddiqui/finalCapstone/blob/main/Task%205%20-%20capstone/Usage%20photos/Finance%20calculator%20investment%20selection.png)
 
 If 'Bond' is selected, the user only needs to imput the numerical values required, then the monthly repayment value is printed
-![Bond selected](https://github.com/ia-siddiqui/finalCapstone/blob/main/Task%205%20-%20capstone/Finance%20calculator%20bond%20selection.png)
+![Bond selected](https://github.com/ia-siddiqui/finalCapstone/blob/main/Task%205%20-%20capstone/Usage%20photos/Finance%20calculator%20bond%20selection.png)
 
 For both the string user input and numerical user inputs are validated:
 * Invalid string input
-  ![Invalid string input](https://github.com/ia-siddiqui/finalCapstone/blob/main/Task%205%20-%20capstone/Finance%20calculator%20invalid%20string%20input.png)
+  ![Invalid string input](https://github.com/ia-siddiqui/finalCapstone/blob/main/Task%205%20-%20capstone/Usage%20photos/Finance%20calculator%20invalid%20string%20input.png)
 
 * Invalid numerical input
-  ![Invalid numerical input](https://github.com/ia-siddiqui/finalCapstone/blob/main/Task%205%20-%20capstone/Finance%20calculator%20invalid%20numerical%20input.png)
+  ![Invalid numerical input](https://github.com/ia-siddiqui/finalCapstone/blob/main/Task%205%20-%20capstone/Usage%20photos/Finance%20calculator%20invalid%20numerical%20input.png)
 
 
 ## Credits
