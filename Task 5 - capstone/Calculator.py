@@ -3,7 +3,6 @@
 
 import math
 
-
 #Function to validate the user input for a string
 def user_input_string_validation(input_request, option_1, option_2):
     #Create a boolean to break the loop after validation
