@@ -46,13 +46,15 @@
                 <form action="https://freecatphotoapp.com/submit-cat-photo">
                     <!-- The fieldset element is used to group related inputs and labels together in a web form. fieldset elements are block-level elements, meaning that they appear on a new line. -->
                     <fieldset>
-                        <!-- You can use radio buttons for questions where you want only one answer out of multiple options -->
                         <!-- label elements are used to help associate the text for an input element with the input element itself (especially for assistive technologies like screen readers)-->
-                        <!-- To make it so selecting one radio button automatically deselects the other, both buttons must have a name attribute with the same value -->
-
-                        <!-- If you select the Indoor radio button and submit the form, the form data for the button is based on its name and value attributes. If your radio buttons do not have a 'value' attribute, the form data will include indoor-outdoor=on, which is not useful when you have multiple buttons. -->
                         <label>
+                            <!-- You can use radio buttons for questions where you want only one answer out of multiple options -->
+                            
                             <!-- The id attribute is used to identify specific HTML elements. Each id attribute's value must be unique from all other id values for the entire page. -->
+
+                            <!-- To make it so selecting one radio button automatically deselects the other, both buttons must have a name attribute with the same value -->
+
+                            <!-- If you select the Indoor radio button and submit the form, the form data for the button is based on its name and value attributes. If your radio buttons do not have a 'value' attribute, the form data will include indoor-outdoor=on, which is not useful when you have multiple buttons. -->
                             <input type="radio" id="indoor" name="indoor-outdoor" value="indoor"> Indoor
                         </label>
                         <label>
