@@ -47,7 +47,7 @@
                     <!-- The fieldset element is used to group related inputs and labels together in a web form. fieldset elements are block-level elements, meaning that they appear on a new line. -->
                     <fieldset>
                         <!-- The legend element acts as a caption for the content in the fieldset element. It gives users context about what they should enter into that part of the form -->
-                        
+
                         <!-- In order to make a checkbox checked or radio button selected by default, you need to add the checked attribute to it. There's no need to set a value to the checked attribute -->
                         <legend>Is your cat an indoor or outdoor cat?</legend>
                         <!-- label elements are used to help associate the text for an input element with the input element itself (especially for assistive technologies like screen readers)-->
@@ -59,7 +59,7 @@
                             <!-- To make it so selecting one radio button automatically deselects the other, both buttons must have a name attribute with the same value -->
 
                             <!-- If you select the Indoor radio button and submit the form, the form data for the button is based on its name and value attributes. If your radio buttons do not have a 'value' attribute, the form data will include indoor-outdoor=on, which is not useful when you have multiple buttons. -->
-                            <input type="radio" id="indoor" name="indoor-outdoor" value="indoor"> Indoor
+                            <input type="radio" id="indoor" name="indoor-outdoor" value="indoor" checked> Indoor
                         </label>
                         <label>
                             <input type="radio" id="outdoor" name="indoor-outdoor" value="outdoor"> Outdoor
@@ -69,7 +69,7 @@
                         <legend>What's your cat's personality?</legend>
                         <!-- Forms commonly use checkboxes for questions that may have more than one answer. -->
                         <!-- There's another way to associate an input element's text with the element itself. You can nest the text within a label element and add a for attribute with the same value as the input element's id attribute. -->
-                        <input type="checkbox" id="loving" name="personality" value="loving"> <label for="loving">Loving</label>
+                        <input type="checkbox" id="loving" name="personality" value="loving" checked> <label for="loving">Loving</label>
                         <input type="checkbox" id="lazy" name="personality" value="lazy"> <label for="lazy">Lazy</label>
                         <input type="checkbox" id="energetic" name="personality" value="energetic"> <label for="energetic">Energetic</label>
 
