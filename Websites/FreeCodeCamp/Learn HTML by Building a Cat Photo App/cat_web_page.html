@@ -51,10 +51,10 @@
                     <!-- If you select the Indoor radio button and submit the form, the form data for the button is based on its name and value attributes. If your radio buttons do not have a 'value' attribute, the form data will include indoor-outdoor=on, which is not useful when you have multiple buttons. -->
                     <label>
                         <!-- The id attribute is used to identify specific HTML elements. Each id attribute's value must be unique from all other id values for the entire page. -->
-                        <input type="radio" id="indoor" name="indoor-outdoor"> Indoor
+                        <input type="radio" id="indoor" name="indoor-outdoor" value="indoor"> Indoor
                     </label>
                     <label>
-                        <input type="radio" id="outdoor" name="indoor-outdoor"> Outdoor
+                        <input type="radio" id="outdoor" name="indoor-outdoor" value="outdoor"> Outdoor
                     </label>
                     <input type="text" name="catphotourl" placeholder="cat photo URL" required>
                     <!-- To ensure the submit button will only submit, add the type attribute with the value submit to the button -->
