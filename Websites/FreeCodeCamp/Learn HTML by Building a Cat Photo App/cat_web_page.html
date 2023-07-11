@@ -45,19 +45,20 @@
                 <h2>Cat form</h2>
                 <form action="https://freecatphotoapp.com/submit-cat-photo">
                     <!-- The fieldset element is used to group related inputs and labels together in a web form. fieldset elements are block-level elements, meaning that they appear on a new line. -->
-                    
-                    <!-- You can use radio buttons for questions where you want only one answer out of multiple options -->
-                    <!-- label elements are used to help associate the text for an input element with the input element itself (especially for assistive technologies like screen readers)-->
-                    <!-- To make it so selecting one radio button automatically deselects the other, both buttons must have a name attribute with the same value -->
+                    <fieldset>
+                        <!-- You can use radio buttons for questions where you want only one answer out of multiple options -->
+                        <!-- label elements are used to help associate the text for an input element with the input element itself (especially for assistive technologies like screen readers)-->
+                        <!-- To make it so selecting one radio button automatically deselects the other, both buttons must have a name attribute with the same value -->
 
-                    <!-- If you select the Indoor radio button and submit the form, the form data for the button is based on its name and value attributes. If your radio buttons do not have a 'value' attribute, the form data will include indoor-outdoor=on, which is not useful when you have multiple buttons. -->
-                    <label>
-                        <!-- The id attribute is used to identify specific HTML elements. Each id attribute's value must be unique from all other id values for the entire page. -->
-                        <input type="radio" id="indoor" name="indoor-outdoor" value="indoor"> Indoor
-                    </label>
-                    <label>
-                        <input type="radio" id="outdoor" name="indoor-outdoor" value="outdoor"> Outdoor
-                    </label>
+                        <!-- If you select the Indoor radio button and submit the form, the form data for the button is based on its name and value attributes. If your radio buttons do not have a 'value' attribute, the form data will include indoor-outdoor=on, which is not useful when you have multiple buttons. -->
+                        <label>
+                            <!-- The id attribute is used to identify specific HTML elements. Each id attribute's value must be unique from all other id values for the entire page. -->
+                            <input type="radio" id="indoor" name="indoor-outdoor" value="indoor"> Indoor
+                        </label>
+                        <label>
+                            <input type="radio" id="outdoor" name="indoor-outdoor" value="outdoor"> Outdoor
+                        </label>
+                    </fieldset>
                     <input type="text" name="catphotourl" placeholder="cat photo URL" required>
                     <!-- To ensure the submit button will only submit, add the type attribute with the value submit to the button -->
                     <button type="submit">Submit</button>
