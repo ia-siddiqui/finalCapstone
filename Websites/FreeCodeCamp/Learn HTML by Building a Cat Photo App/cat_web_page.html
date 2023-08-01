@@ -1,9 +1,6 @@
-<!-- All pages should begin with <!DOCTYPE html>. This special string is known as a declaration and ensures the browser tries to meet industry-wide specifications. -->
 <!DOCTYPE html>
-<!-- Add the lang attribute with the value en to the opening html tag to specify that the language of the page is English -->
 <html lang="en">
     <head>
-        <!-- You can set browser behavior by adding self-closing meta elements in the head -->
         <meta charset="UTF-8">
         <title>CatPhotoApp</title>
     </head>
@@ -12,12 +9,7 @@
             <h1>CatPhotoApp</h1>
             <section>
                 <h2>Cat Photos</h2>
-                <!-- You can link to another page with the anchor (a) element -->
-                <!-- Adding the target attribute as _blank opens the link in a new tab -->
                 <p>See more <a href="https://freecatphotoapp.com" target="_blank">cat photos</a> in our gallery.</p>
-                <!-- The src attribute in an img element specifies the image's URL (where the image is located) -->
-                <!-- All img elements should have an alt attribute. 
-                The alt attribute's text is used for screen readers to improve accessibility and is displayed if the image fails to load-->
                 <a href="https://freecatphotoapp.com"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
             </section>
 
@@ -29,7 +21,6 @@
                     <li>laser pointers</li>
                     <li>lasagna</li>
                 </ul>
-                <!--The figure element represents self-contained content and will allow you to associate an image with a caption-->
                 <figure>
                     <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg" alt="A slice of lasagna on a plate.">
                     <figcaption>Cats <em>love</em> lasagna.</figcaption>
@@ -51,21 +42,9 @@
             <section>
                 <h2>Cat form</h2>
                 <form action="https://freecatphotoapp.com/submit-cat-photo">
-                    <!-- The fieldset element is used to group related inputs and labels together in a web form. fieldset elements are block-level elements, meaning that they appear on a new line. -->
                     <fieldset>
-                        <!-- The legend element acts as a caption for the content in the fieldset element. It gives users context about what they should enter into that part of the form -->
-
-                        <!-- In order to make a checkbox checked or radio button selected by default, you need to add the checked attribute to it. There's no need to set a value to the checked attribute -->
                         <legend>Is your cat an indoor or outdoor cat?</legend>
-                        <!-- label elements are used to help associate the text for an input element with the input element itself (especially for assistive technologies like screen readers)-->
                         <label>
-                            <!-- You can use radio buttons for questions where you want only one answer out of multiple options -->
-
-                            <!-- The id attribute is used to identify specific HTML elements. Each id attribute's value must be unique from all other id values for the entire page. -->
-
-                            <!-- To make it so selecting one radio button automatically deselects the other, both buttons must have a name attribute with the same value -->
-
-                            <!-- If you select the Indoor radio button and submit the form, the form data for the button is based on its name and value attributes. If your radio buttons do not have a 'value' attribute, the form data will include indoor-outdoor=on, which is not useful when you have multiple buttons. -->
                             <input type="radio" id="indoor" name="indoor-outdoor" value="indoor" checked> Indoor
                         </label>
                         <label>
@@ -74,14 +53,11 @@
                     </fieldset>
                     <fieldset>
                         <legend>What's your cat's personality?</legend>
-                        <!-- Forms commonly use checkboxes for questions that may have more than one answer. -->
-                        <!-- There's another way to associate an input element's text with the element itself. You can nest the text within a label element and add a for attribute with the same value as the input element's id attribute. -->
                         <input type="checkbox" id="loving" name="personality" value="loving" checked> <label for="loving">Loving</label>
                         <input type="checkbox" id="lazy" name="personality" value="lazy"> <label for="lazy">Lazy</label>
                         <input type="checkbox" id="energetic" name="personality" value="energetic"> <label for="energetic">Energetic</label>
                     </fieldset>
                     <input type="text" name="catphotourl" placeholder="cat photo URL" required>
-                    <!-- To ensure the submit button will only submit, add the type attribute with the value submit to the button -->
                     <button type="submit">Submit</button>
                 </form>
             </section>
