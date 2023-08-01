@@ -9,4 +9,7 @@ body {
 div {
     width: 80%;
     background-color: burlywood;
+    /* In order to centre the div horizontally, need to set margins to auto*/
+    margin-right: auto;
+    margin-left: auto;
 }
