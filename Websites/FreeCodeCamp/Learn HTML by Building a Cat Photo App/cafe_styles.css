@@ -6,6 +6,7 @@ body {
     background-color: burlywood;
 }
 
+/* The 'div' element is used mainly for design layout purposes */
 div {
     width: 300px;
 }
