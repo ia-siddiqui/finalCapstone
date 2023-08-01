@@ -3,11 +3,10 @@ h1, h2, p {
 }
 
 body {
-    background-color: burlywood;
+    /* background-color: burlywood; */
 }
 
-/* The 'div' element is used mainly for design layout purposes 
 div {
     width: 300px;
+    background-color: burlywood;
 }
-*/
