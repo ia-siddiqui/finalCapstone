@@ -15,15 +15,15 @@ h1, h2, p {
     margin-left: auto;
 }
 
-.flavor {
+.flavor , .dessert {
     text-align: left;
     width: 75%;
-  }
+}
   
-  .price {
+.price {
     text-align: right;
     width: 25%;
-  }
+}
 
 /* You can style all the 'p' elements nested anywhere in elements with a class*/
 .item p {
