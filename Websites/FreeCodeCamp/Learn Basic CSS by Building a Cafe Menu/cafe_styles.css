@@ -22,3 +22,8 @@ h1, h2, p {
 .price {
     text-align: right;
 }
+
+/* You can style all the 'p' elements nested anywhere in elements with a class*/
+.item p {
+    display : inline-block;
+}
