@@ -6,7 +6,8 @@ body {
     /* background-color: burlywood; */
 }
 
-div {
+/* Creating a class selector is defined  defined by a name with a dot directly in front of it */
+.menu {
     width: 80%;
     background-color: burlywood;
     /* In order to centre the div horizontally, need to set margins to auto*/
