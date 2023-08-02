@@ -1,9 +1,9 @@
-h1, h2, p {
-    text-align: center;
+body {
+    background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
 }
 
-body {
-    /* background-color: burlywood; */
+h1, h2, p {
+    text-align: center;
 }
 
 /* Creating a class selector is defined  defined by a name with a dot directly in front of it */
