@@ -17,12 +17,12 @@ h1, h2, p {
 
 .flavor {
     text-align: left;
-    width: 49%;
+    width: 50%;
   }
   
   .price {
     text-align: right;
-    width: 49%;
+    width: 50%;
   }
 
 /* You can style all the 'p' elements nested anywhere in elements with a class*/
