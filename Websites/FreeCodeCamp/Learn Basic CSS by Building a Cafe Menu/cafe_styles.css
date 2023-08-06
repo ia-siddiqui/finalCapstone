@@ -74,3 +74,8 @@ footer {
 a {
     color: black;
 }
+
+/*By using a psuedo-selector, you change properties of a link when the link has actually been visited*/
+a:visited {
+    color: grey;
+}
