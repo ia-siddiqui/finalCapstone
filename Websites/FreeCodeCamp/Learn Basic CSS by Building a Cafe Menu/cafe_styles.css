@@ -56,6 +56,7 @@ h1 , h2 {
 /* You can style all the 'p' elements nested anywhere in elements with a class*/
 .item p {
     display : inline-block;
+    font-size: 18px;
     margin-top: 5px;
     margin-bottom: 5px;
 }
