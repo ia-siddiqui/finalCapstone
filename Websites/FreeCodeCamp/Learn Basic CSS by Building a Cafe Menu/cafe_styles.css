@@ -38,6 +38,10 @@ hr {
     border-color: brown;
 }
 
+.bottom-line {
+    margin-top: 25px;
+}
+
 h1 , h2 {
     /*You can add a fallback font value, for when the initial font is not found or available*/
     font-family: Impact, serif;
