@@ -13,6 +13,8 @@ h1, h2, p {
     /* In order to centre the div horizontally, need to set margins to auto*/
     margin-right: auto;
     margin-left: auto;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .flavor , .dessert {
