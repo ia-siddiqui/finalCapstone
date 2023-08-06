@@ -14,6 +14,8 @@ h1, h2, p {
     margin-right: auto;
     margin-left: auto;
     padding: 20px;
+    /*To prevent the sale items from being too far apart from their prices, we add a 'max-width' property*/
+    max-width: 500px;
 }
 
 .flavor , .dessert {
