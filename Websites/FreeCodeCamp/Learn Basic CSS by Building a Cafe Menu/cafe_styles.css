@@ -20,7 +20,8 @@ h1, h2, p {
 }
 
 h1 , h2 {
-    font-family: Impact;
+    /*You can add a fallback font value, for when the initial font is not found or available*/
+    font-family: Impact, serif;
 }
 
 .flavor , .dessert {
