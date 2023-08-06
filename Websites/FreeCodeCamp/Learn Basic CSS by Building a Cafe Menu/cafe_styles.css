@@ -83,3 +83,8 @@ a:visited {
 a:hover {
     color: brown;
 }
+
+/*In order to change the properties of a link when it is actaully CLICKED ON*/
+a:active {
+    color: white;
+}
