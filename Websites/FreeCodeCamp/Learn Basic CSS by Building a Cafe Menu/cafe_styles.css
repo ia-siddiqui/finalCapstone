@@ -31,6 +31,10 @@ h1, h2, p {
     max-width: 500px;
 }
 
+hr {
+    height: 3px;
+}
+
 h1 , h2 {
     /*You can add a fallback font value, for when the initial font is not found or available*/
     font-family: Impact, serif;
